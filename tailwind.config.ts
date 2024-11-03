@@ -18,7 +18,20 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        tango: ["var(--font-tango-sans)"],
+        utendo: ["var(--font-utendo)"],
+      },
       colors: {
+        purple: {
+          dark: "#242038",
+          main: "#725AC1",
+          soft: "#8D86C9"
+        },
+        white: {
+          dark: "#CAC4CE",
+          soft: "#F7ECE1",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
