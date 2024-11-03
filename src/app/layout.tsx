@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import Navbar from "@/components/ui/Navbar";
+
 const tangoSans = localFont({
   src: "./fonts/TangoSans.ttf",
   variable: "--font-tango-sans",
@@ -26,8 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${tangoSans.variable} ${utendo.variable} antialiased`}
+        className={`${tangoSans.variable} ${utendo.variable} antialiased bg-white-soft`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
