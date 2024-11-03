@@ -53,9 +53,9 @@ export default function Navbar() {
                     onClick={() => setIsOpen(!isOpen)} 
                     className="w-[30px] h-[30px] flex md:hidden flex-col justify-center items-center gap-2"
                 >
-                    <div className="h-[2px] w-full bg-white-soft"></div>
-                    <div className="h-[2px] w-full bg-white-soft"></div>
-                    <div className="h-[2px] w-full bg-white-soft"></div>
+                    <div className={`h-[2px] w-full bg-white-soft transition-transform duration-300 ${isOpen ? "rotate-45" : ""} origin-[0%_0%]`} />
+                    <div className={`h-[2px] w-full bg-white-soft transition-all duration-300 ${isOpen ? "opacity-0 scale-0" : "opacity-100 scale-1"}`} />
+                    <div className={`h-[2px] w-full bg-white-soft transition-transform duration-300 ${isOpen ? "rotate-[-45deg]" : ""} origin-[0%_100%]`} />
                 </div>
             </header>
             <AnimatePresence>
