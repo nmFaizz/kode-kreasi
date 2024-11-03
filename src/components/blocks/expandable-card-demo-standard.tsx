@@ -72,7 +72,7 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white-dark dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -90,13 +90,13 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 dark:text-neutral-200"
+                      className="font-bold text-neutral-700 dark:text-neutral-200 font-utendo"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400"
+                      className="text-neutral-600 dark:text-neutral-400 font-utendo"
                     >
                       {active.description}
                     </motion.p>
@@ -106,7 +106,7 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-blue-500 text-white"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-purple-soft text-white-soft font-utendo"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -135,7 +135,7 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer bg-white-dark"
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -150,13 +150,13 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
+                  className="font-medium font-utendo text-neutral-800 dark:text-neutral-200 text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
+                  className="text-neutral-600 font-utendo dark:text-neutral-400 text-center md:text-left"
                 >
                   {card.description}
                 </motion.p>
@@ -164,7 +164,7 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-blue-500 hover:text-white text-black mt-4 md:mt-0"
+              className="px-4 py-2 text-sm rounded-full font-bold font-utendo bg-gray-100 hover:bg-purple-soft hover:text-white-soft text-black mt-4 md:mt-0"
             >
               {card.ctaText}
             </motion.button>

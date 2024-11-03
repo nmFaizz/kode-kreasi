@@ -41,8 +41,8 @@ const CategorySelector = ({
                                     addCategory(category);
                                 }
                             }}
-                            className={`w-fit min-w-fit h-8 mx-2 px-5 py-2 flex flex-row justify-center items-center text-sm border border-gray-500 bg-white text-gray-900 break-keep rounded-3xl cursor-pointer 
-                                        ${selectedCategories.includes(category) ? 'bg-blue-800 text-white' : 'bg-white text-gray-900'}`}>
+                            className={`w-fit min-w-fit h-8 mx-2 px-5 py-2 flex flex-row justify-center items-center font-utendo text-md border border-gray-500 bg-white text-gray-900 break-keep rounded-3xl cursor-pointer 
+                                        ${selectedCategories.includes(category) ? 'bg-purple-dark text-white-soft' : 'bg-white-soft text-gray-900'}`}>
                             {category}
                         </div>
                     ))}

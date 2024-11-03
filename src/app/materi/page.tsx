@@ -10,18 +10,21 @@ export default function Materi() {
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
     return(
-        <div className="mt-20 text-center justify-items-center">
-            <span className="text-2xl font-semibold">Categories: </span>
-            <div className="flex mb-5 mt-5">
-                <CategorySelector 
-                    categories={categories}
-                    selectedCategories={selectedCategories}
-                    setSelectedCategories={setSelectedCategories}
-                />
+        <div className="min-h-screen bg-purple-soft pt-20">
+            <div className="text-center justify-items-center">
+                <span className="text-2xl font-semibold font-tango">Categories: </span>
+                <div className="flex mb-5 mt-5">
+                    <CategorySelector 
+                        categories={categories}
+                        selectedCategories={selectedCategories}
+                        setSelectedCategories={setSelectedCategories}
+                    />
 
+                </div>
+                <ExpandableCard selectedCategories={selectedCategories}/> 
             </div>
-            <ExpandableCard selectedCategories={selectedCategories}/> 
         </div>
+        
     )
   };
 ;
