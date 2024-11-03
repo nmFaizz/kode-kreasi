@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${tangoSans.variable} ${utendo.variable} antialiased`}
+        className={`${tangoSans.variable} ${utendo.variable} antialiased bg-white-soft`}
       >
         <Navbar />
         {children}
