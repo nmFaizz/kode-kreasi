@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const tangoSans = localFont({
+  src: "./fonts/TangoSans.ttf",
+  variable: "--font-tango-sans",
+  weight: "800",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const utendo = localFont({
+  src: "./fonts/Utendo-Regular.ttf",
+  variable: "--font-utendo",
   weight: "100 900",
 });
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${tangoSans.variable} ${utendo.variable} antialiased`}
       >
         {children}
       </body>
