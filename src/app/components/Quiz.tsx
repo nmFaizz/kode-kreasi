@@ -25,7 +25,7 @@ export default function QuizPage({
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-white-soft">
-            <div className="p-6 max-w-lg bg-white-dark rounded-lg shadow-lg flex flex-col">
+            <div className="p-6 max-w-lg bg-white-dark rounded-lg shadow-lg flex flex-col w-">
                 <div className="flex flex-col justify-center mb-6">
                     <img src={image} alt="question image" />
                     <h1 className="text-2xl font-semibold text-gray-800">{question.title}</h1>
@@ -39,7 +39,7 @@ export default function QuizPage({
                                 name="question"
                                 value={option.name}
                                 className="h-4 w-4 text-blue-600 border-gray-300 focus:ring-2 focus:ring-blue-300"
-                                onChange={() => setSelectedAnswer(option.isCorrect)} // Pass isCorrect value
+                                onChange={() => setSelectedAnswer(option.isCorrect)} 
                             />
                             <label htmlFor={`opt${idx + 1}`} className="ml-2 text-gray-700 cursor-pointer">
                                 {option.name}
