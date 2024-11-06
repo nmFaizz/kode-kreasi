@@ -9,7 +9,7 @@ interface Props {
 
 export const Reveal = ({children, width = "fit-content", delay = 0.25}: Props) => {
     const ref = useRef(null); 
-    const isInView = useInView(ref, {once: true});
+    const isInView = useInView(ref, {once: false});
 
     const mainControls = useAnimation();
     const slideControls = useAnimation();
@@ -18,6 +18,10 @@ export const Reveal = ({children, width = "fit-content", delay = 0.25}: Props) =
         if(isInView){
             mainControls.start("visible");
             slideControls.start("visible");
+        }
+        else {
+            mainControls.start("hidden");
+            slideControls.start("hidden");
         }
     }, [isInView])
 
