@@ -11,8 +11,8 @@ export default function SisdigPage() {
     return(
         <>
         <div className="px-4 mx-auto max-w-[748px]">
-                    <Back href="/materi"/>
-                    <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengantar Sistem Digital</h1>
+            <Back href="/materi"/>
+            <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengantar Sistem Digital</h1>
             <div className="font-utendo text-lg text-justify leading-loose">
                 <p className="mt-5">Sistem Digital adalah dasar dari teknologi modern yang kita gunakan
                     sehari-hari. Materi ini mencakup konsep logika digital serta desain
@@ -76,7 +76,7 @@ export default function SisdigPage() {
                     className="mx-auto"
                 />
                 <p className="text-center text-sm">Tabel Bilangan Heksadesimal</p>
-                <p className="text-center text-sm text-blue-700 underline">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQsrPeDOZL85JnGTxgS8bBamPyG2IiS9XRgQ&s</p>
+                <a href='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQsrPeDOZL85JnGTxgS8bBamPyG2IiS9XRgQ&s' className="text-center text-sm text-blue-700 underline text-wrap">Link Sumber</a>
             </div>
         </div>
         </>

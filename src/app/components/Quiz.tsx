@@ -52,7 +52,7 @@ export default function QuizPage({
 
     return (
         <div className="h-[640px] flex justify-center mt-10 items-center p-4">
-            <div className="w-full max-w-4xl rounded-lg flex flex-col p-6">
+            <div className="w-full max-w-4xl rounded-lg flex flex-col p-4">
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-[160px] items-center mb-6">
                     <div className="flex flex-col lg:border-r-2 lg:border-white-dark justify-center p-4 lg:p-10">
                         <span className="text-gray-600 font-mono text-lg lg:text-xl">
@@ -61,7 +61,7 @@ export default function QuizPage({
                         <h1 className="text-2xl lg:text-4xl text-gray-800 mb-6 text-center lg:text-left">
                             {question.title}
                         </h1>
-                        <div className="flex justify-center w-[400px] h-[250px]  lg:justify-start">
+                        <div className="flex justify-center max-w-[400px] h-[250px]  lg:justify-start">
                             {isImageAvailable && (<motion.img
                                 src={image}
                                 alt="question image"
