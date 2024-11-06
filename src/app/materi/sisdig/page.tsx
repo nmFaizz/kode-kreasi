@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { InlineMath, BlockMath } from 'react-katex';
+import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css'; 
 import Back from '@/components/ui/buttons/Back';
 
@@ -11,8 +11,8 @@ export default function SisdigPage() {
     return(
         <>
         <div className="px-4 mx-auto max-w-[748px]">
-        <Back href="/materi"/>
-            <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengantar Sistem Digital</h1>
+                    <Back href="/materi"/>
+                    <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengantar Sistem Digital</h1>
             <div className="font-utendo text-lg text-justify leading-loose">
                 <p className="mt-5">Sistem Digital adalah dasar dari teknologi modern yang kita gunakan
                     sehari-hari. Materi ini mencakup konsep logika digital serta desain
@@ -27,12 +27,12 @@ export default function SisdigPage() {
                 <h2 className="font-semibold font-tango text-2xl mt-5">&bull; Sistem Bilangan</h2>
                 <p>Sistem bilangan adalah cara untuk mewakili bilangan dengan menggunakan simbol atau angka yang konsisten.
                     Ada 4 sistem bilangan, antara lain : Biner, Oktal, Desimal, dan Heksadesimal.
-                    Namun, Sistem bilangan yang umum digunakan manusia adalah desimal, yang menggunakan 10 simbol yaitu 0–9.
+                    Namun, Sistem bilangan yang umum digunakan manusia adalah desimal, yang menggunakan 10 simbol yaitu 0&ndash;9.
                 </p>
 
                 <h2 className="font-semibold font-tango text-xl mt-4">Sistem Bilangan Biner (Basis 2)</h2>
                 <p>Sistem bilangan biner atau sistem bilangan basis dua adalah sistem penulisan angka untuk dengan menggunakan dua simbol, 
-                    yaitu "0" (nol) dan "1" (satu). Biner adalah bahasa dasar komputer. Semua data yang diproses oleh komputer diubah menjadi
+                    yaitu &quot;0&quot; (nol) dan &quot;1&quot; (satu). Biner adalah bahasa dasar komputer. Semua data yang diproses oleh komputer diubah menjadi
                     biner, dengan setiap bit(binary digit) berupa 0 dan 1. Perhatikan tabel berikut.
                 </p>
                 <p>Contoh Konversi Biner ke Desimal :<br /><InlineMath>{binaryExample}</InlineMath></p>
@@ -46,9 +46,8 @@ export default function SisdigPage() {
                 <p className="text-center text-sm">Tabel Bilangan Biner</p>
                 <p className="text-center text-sm text-blue-700 underline">https://mathcyber1997.com/wp-content/uploads/2020/11/Tabel-Biner-450x357.png</p>
 
-
                 <h2 className="font-semibold font-tango text-xl mt-4">Sistem Bilangan Oktal (Basis 8)</h2>
-                <p>Sistem bilangan berbasis 8 yang menggunakan angka 0-7 untuk mewakili angka.
+                <p>Sistem bilangan berbasis 8 yang menggunakan angka 0&ndash;7 untuk mewakili angka.
                     Oktal sering digunakan dalam pemrograman komputer sebagai cara yang lebih ringkas untuk merepresentasikan biner 
                     karena tiga digit biner dapat diwakili oleh satu digit oktal. Perhatikan tabel berikut.
                 </p>
@@ -62,7 +61,6 @@ export default function SisdigPage() {
                 />
                 <p className="text-center text-sm">Tabel Bilangan Oktal</p>
                 <p className="text-center text-sm text-blue-700 underline">https://mathcyber1997.com/wp-content/uploads/2020/11/Tabel-Oktal-450x357.png</p>
-
 
                 <h2 className="font-semibold font-tango text-xl mt-4">Sistem Bilangan Heksadesimal (Basis 16)</h2>
                 <p>Sistem ini menggunakan enam belas simbol, yaitu 0 sampai 9 dan A sampai F, di mana A mewakili 10,
@@ -79,8 +77,6 @@ export default function SisdigPage() {
                 />
                 <p className="text-center text-sm">Tabel Bilangan Heksadesimal</p>
                 <p className="text-center text-sm text-blue-700 underline">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQsrPeDOZL85JnGTxgS8bBamPyG2IiS9XRgQ&s</p>
-
-                
             </div>
         </div>
         </>

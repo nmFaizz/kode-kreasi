@@ -136,7 +136,7 @@ export default function ExpandableCard({
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full gap-4">
         {filteredCourseList.map((card, index) => (
-        <Reveal width="100%" delay={index * 0.35}>
+        <Reveal width="100%" delay={index * 0.35} key={index}>
           <motion.div
               layoutId={`card-${card.title}-${id}`}
               key={`card-${card.title}-${id}`}
