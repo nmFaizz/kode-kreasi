@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <main className="page-max-width space-y-5">
-        <section className="h-[70vh] mt-5 flex items-center justify-center relative">
+        <section className="px-8 h-[70vh] mt-5 flex items-center justify-center relative">
           <Image 
             src="/kk-bg.png"
             fill
@@ -73,8 +73,8 @@ export default function Home() {
 
         <MateriSection />
 
-        <section className="flex md:flex-row flex-col gap-5 overflow-hidden justify-between bg-purple-soft p-5 sm:p-12 rounded-xl">
-          <div className="text-white-soft">
+        <section className="flex md:flex-row flex-col gap-5 overflow-hidden justify-between bg-gradient-to-l from-white-soft to-white-dark p-5 sm:p-12 rounded-xl">
+          <div>
             <h1 className="font-tango text-2xl sm:text-4xl">Latihan Untukmu</h1>
             <p>Ribuan soal siap untuk meningkatkan kemampuanmu!</p>
           </div>

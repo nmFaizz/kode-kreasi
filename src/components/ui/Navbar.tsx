@@ -82,7 +82,7 @@ export default function Navbar() {
                         initial="initial"
                         exit="exit"
                         variants={navMenuVariants}
-                        className="z-40 text-3xl font-tango origin-top flex md:hidden items-center gap-8 bg-purple-soft text-white-soft fixed top-0 left-0 w-full h-screen flex-col justify-center" 
+                        className="z-40 text-3xl font-tango origin-top flex md:hidden items-center gap-8 bg-gradient-to-r from-purple-soft to-white-dark text-white-soft  fixed top-0 left-0 w-full h-screen flex-col justify-center" 
                     >
                         <div className="flex flex-col gap-12 items-center">
                             {navMenuItems.map((item, index) => (

@@ -31,7 +31,7 @@ export default function ExerciseList() {
           >
             <div className="flex flex-col gap-2">
             <motion.div
-              className="gap-2 border border-white-dark p-5 max-w-[320px] rounded-xl bg-gradient-to-r from-white-dark to-white-soft"
+              className="gap-2 border border-white-dark p-5 max-w-[320px] rounded-xl bg-gradient-to-l from-white-dark to-white-soft"
               variants={itemVariants}
             >
               <div className="mb-5">
@@ -48,7 +48,7 @@ export default function ExerciseList() {
 
           <div className="flex flex-col gap-2">
             <motion.div
-              className="gap-2 border border-white-dark p-5 max-w-[320px] rounded-xl bg-gradient-to-r from-white-dark to-white-soft"
+              className="gap-2 border border-white-dark p-5 max-w-[320px] rounded-xl bg-gradient-to-l from-white-dark to-white-soft"
               variants={itemVariants}
             >
               <div className="mb-5">
@@ -63,7 +63,7 @@ export default function ExerciseList() {
             </motion.div>
 
             <motion.div
-              className="gap-2 border border-white-dark p-5 max-w-[320px] rounded-xl bg-gradient-to-r from-white-dark to-white-soft"
+              className="gap-2 border border-white-dark p-5 max-w-[320px] rounded-xl bg-gradient-to-l from-white-dark to-white-soft"
               variants={itemVariants}
             >
               <div className="mb-5">
