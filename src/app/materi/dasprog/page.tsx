@@ -192,9 +192,9 @@ export default function DasprogPage() {
           <p>
             Seperti namanya, komentar single-line hanya bekerja pada satu baris.
             Komentar single-line diawali dengan simbol{' '}
-            <span className="bg-gray-100 px-1 rounded">// </span>. Semua karakter
+            <span className="bg-gray-100 px-1 rounded">&frasl;&frasl; </span>. Semua karakter
             (pada satu baris) dibelakang simbol{' '}
-            <span className="bg-gray-100 px-1 rounded">//</span> akan diabaikan.
+            <span className="bg-gray-100 px-1 rounded">&frasl;&frasl;</span> akan diabaikan.
           </p>
           <SyntaxHighlighter language="c" style={docco} className="rounded-xl">
             {singleLineComment}
@@ -203,8 +203,8 @@ export default function DasprogPage() {
           <h2 className="font-semibold font-tango text-lg mt-3">Komentar Multi-Line</h2>
           <p>
             Sedangkan komentar multi-line dapat bekerja pada lebih dari satu baris.
-            Pasangan simbol <span className="bg-gray-100 px-1 rounded">/*</span> dan{' '}
-            <span className="bg-gray-100 px-1 rounded">*/</span>digunakan untuk
+            Pasangan simbol <span className="bg-gray-100 px-1 rounded">* &frasl;</span> dan{' '}
+            <span className="bg-gray-100 px-1 rounded">&frasl; *</span>digunakan untuk
             membuat komentar multi-line. Semua karakter yang berada di antara dua simbol
             tersebut akan diabaikan.
           </p>
