@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 const navMenuVariants = {
     initial: { opacity: 0, scale: 0.95 },  
@@ -90,6 +90,7 @@ export default function Navbar() {
                                     <NavMenuItem  
                                         name={item.name} 
                                         href={item.href} 
+                                        setIsOpen={setIsOpen}
                                     />
                                 </div>
                             ))}
@@ -104,6 +105,7 @@ export default function Navbar() {
 interface NavMenuItemProps {
     name: string;
     href: string;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const menuItemVariants = {
@@ -127,12 +129,13 @@ const menuItemVariants = {
     }
 };
 
-function NavMenuItem({ name, href }: NavMenuItemProps) {
+function NavMenuItem({ name, href, setIsOpen }: NavMenuItemProps) {
     return (
         <motion.div
             initial="initial"
             animate="open"
             variants={menuItemVariants}
+            onClick={() => setIsOpen(false)}
         >
             <Link href={href}>
                 {name}
@@ -141,8 +144,8 @@ function NavMenuItem({ name, href }: NavMenuItemProps) {
     )
 }
 
-const navMenuItems: NavMenuItemProps[] = [
+const navMenuItems = [
     { name: "Home", href: "/" },
     { name: "Materi", href: "/materi" },
-    { name: "Exercises", href: "/exercises" },
+    { name: "Exercises", href: "/exercise" },
 ]
