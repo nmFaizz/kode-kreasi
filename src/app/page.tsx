@@ -1,6 +1,9 @@
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+
 import Image from "next/image";
+import Link from "next/link";
+
 import ExerciseList from "@/components/ui/exercise-list";
 import MateriSection from "@/components/ui/materi-section";
 
@@ -39,13 +42,13 @@ export default function Home() {
               <p className="text-center text-md">KodeKreasi.id</p>
             </div>
             <TypewriterEffect words={words} />
-            <button className="mt-12 bg-purple-main rounded-[6px] px-4 py-0.5 text-white-soft">
+            <Link href="#about" className="mt-12 bg-purple-main rounded-[6px] px-4 py-0.5 text-white-soft">
               <p className="text-xl">Get Started</p>
-            </button>
+            </Link>
           </div>
         </section>
 
-        <section className="md:h-[80vh] overflow-hidden py-12 flex flex-col items-center justify-between gap-5 rounded-xl px-8 bg-gradient-to-r from-white-soft to-white-dark">
+        <section id="about" className="md:h-[80vh] overflow-hidden py-12 flex flex-col items-center justify-between gap-5 rounded-xl px-8 bg-gradient-to-r from-white-soft to-white-dark">
           <article className="flex-1 max-w-[420px] text-center">
             <h1 className="text-xl md:text-4xl font-tango">Kontribusi Kami Untuk Talenta Digital</h1>
             <p>Kode Kreasi, /Kode/Kreasi merupakan platform sharing ilmu tentang teknologi, menyediakan akses kepada seluruh TECH Enthusiast untuk belajar, berlatih, dan update informasi seputar IT</p>
