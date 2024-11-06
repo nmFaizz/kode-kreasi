@@ -1,7 +1,7 @@
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import Image from "next/image";
-import ExerciseSection from "@/components/ui/exercise-section";
+import ExerciseList from "@/components/ui/exercise-list";
 import MateriSection from "@/components/ui/materi-section";
 
 const words = [
@@ -25,7 +25,7 @@ const words = [
 export default function Home() {
   return (
     <>
-      <main className="h-[500vh] page-max-width space-y-12">
+      <main className="page-max-width space-y-5">
         <section className="h-[70vh] mt-5 flex items-center justify-center relative">
           <Image 
             src="/kk-bg.png"
@@ -45,30 +45,25 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="md:h-[60vh] py-12 flex flex-col md:flex-row items-center justify-between gap-12 rounded-xl px-8 bg-gradient-to-r from-white-soft to-white-dark">
-          <article className="flex-1 max-w-[420px]">
+        <section className="md:h-[80vh] overflow-hidden py-12 flex flex-col items-center justify-between gap-5 rounded-xl px-8 bg-gradient-to-r from-white-soft to-white-dark">
+          <article className="flex-1 max-w-[420px] text-center">
             <h1 className="text-xl md:text-4xl font-tango">Kontribusi Kami Untuk Talenta Digital</h1>
             <p>Kode Kreasi, /Kode/Kreasi merupakan platform sharing ilmu tentang teknologi, menyediakan akses kepada seluruh TECH Enthusiast untuk belajar, berlatih, dan update informasi seputar IT</p>
           </article>
 
-          {/* <div className="flex-1 max-w-[320px] p-5 rounded-xl">
-            <figure className="bg-black w-full h-32 rounded-[6px]">
-
-            </figure>
-
-            <article className="mt-5">
-              <h1 className="font-tango">KodeKreasi.id</h1>
-              <p>Lorem ipsum dolor sit amet dolor sit amet lorem ipsum dolor sit amet dolor sit amet</p>
-            </article>
-
-            <button className="bg-purple-main rounded-[6px] px-8 text-white-soft mt-6">
-              Start
-            </button>
-          </div> */}
+          <figure className="w-[420px] sm:w-[720px] relative bottom-[-100px] md:bottom-[-60px]">
+            <Image 
+              src="/code-png.png"
+              width={2500}
+              height={1500}
+              alt="code"
+              className=""
+            />      
+          </figure>
         </section>
 
-        <section className="bg-purple-main py-12 px-12 rounded-xl">
-          <h1 className="font-tango text-5xl text-white-soft mb-8">Kata Mereka</h1>
+        <section className="bg-white-dark py-12 px-4 md:px-12 rounded-xl">
+          <h1 className="font-tango text-2xl sm:text-4xl mb-8">Kata Mereka</h1>
           <InfiniteMovingCards
             items={testimonials}
             direction="right"
@@ -78,13 +73,13 @@ export default function Home() {
 
         <MateriSection />
 
-        <section className="py-24 flex md:flex-row flex-col overflow-hidden justify-between items-center">
-          <div>
-            <h1 className="font-tango text-4xl">Latihan Untukmu</h1>
+        <section className="flex md:flex-row flex-col gap-5 overflow-hidden justify-between bg-purple-soft p-5 sm:p-12 rounded-xl">
+          <div className="text-white-soft">
+            <h1 className="font-tango text-2xl sm:text-4xl">Latihan Untukmu</h1>
             <p>Ribuan soal siap untuk meningkatkan kemampuanmu!</p>
           </div>
 
-          <ExerciseSection />
+          <ExerciseList />
         </section>
       </main>
     </>
@@ -94,31 +89,32 @@ export default function Home() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "This platform has been a game changer in my learning journey. The articles are clear, concise, and always up-to-date with the latest trends in technology. I feel much more confident in my skills now.",
+    name: "Alice Johnson",
+    title: "Software Engineer",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "As someone just starting out in IT, I found this platform to be incredibly helpful. The tutorials are well-structured and easy to follow, allowing me to quickly grasp complex concepts.",
+    name: "David Lee",
+    title: "Junior Developer",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "The interactive coding challenges and hands-on exercises have greatly accelerated my understanding of programming. I highly recommend this platform for anyone serious about IT.",
+    name: "Sara Smith",
+    title: "Full Stack Developer",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "I’ve been using this platform for several months, and it has helped me stay on top of the latest advancements in web development. The content is comprehensive, and the community support is fantastic.",
+    name: "Michael Brown",
+    title: "Web Developer",
   },
-]
+  {
+    quote:
+      "Learning IT can be overwhelming, but this platform makes it engaging and enjoyable. I love how I can practice coding in a real-world context and improve my skills in a structured way.",
+    name: "Jessica White",
+    title: "Data Scientist",
+  },
+];

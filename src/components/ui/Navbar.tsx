@@ -19,8 +19,14 @@ const navMenuVariants = {
 }
 
 const headerVariants = {
-    hidden: {left: 0},
-    visible: {left: "100%"},
+    initial: {x: "-110vw"},
+    animate: {
+        x: 0,
+        transition: {
+            duration: 1,
+            ease: [0.12, 0.7, 0.39, 2]
+        }
+    },
 
 }
 
@@ -33,8 +39,8 @@ export default function Navbar() {
                 className="page-max-width overflow-hidden sticky rounded-full top-2 z-50"
             >
                 <motion.div 
-                    initial="hidden"
-                    animate="visible"
+                    initial="initial"
+                    animate="animate"
                     variants={headerVariants} 
                     className="flex justify-between items-center transition-all ease-in-out bg-gradient-to-l from-purple-soft to-white-dark text-white-soft font-utendo py-2 md:py-3 rounded-full px-5 ">
                     <Link href="/" className="w-[70px] md:w-[80px]">
@@ -48,7 +54,7 @@ export default function Navbar() {
                     </Link>
 
                     <nav className="items-center gap-8 font-bold hidden md:flex">
-                        <Link href="/materi">
+                        <Link href="/">
                             Home
                         </Link>
                         <Link href="/materi">
