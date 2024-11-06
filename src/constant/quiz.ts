@@ -29,30 +29,30 @@ export const quizDasprog: Soal[] = [
     {
         title: "Apa hasil outputnya?",
         opt1: {
-            name: "Bukan Angka ",
+            name: "0",
             isCorrect: false,
         },
         opt2: {
-            name: "Ganjil",
+            name: "Error",
             isCorrect: false,
         },
         opt3: {
-            name:"Genap",
+            name:"Tidak ada",
             isCorrect: true,
         }
     },
     {
-        title: "Operator apa itu?",
+        title: "Apa fungsi library ini?",
         opt1: {
-            name:"increment",
+            name:"Mengambil fungsi-fungsi penting",
             isCorrect: true,
         },
         opt2: {
-            name: "Plus",
+            name: "Tidak ada gunanya",
             isCorrect: false,
         },
         opt3: {
-            name: "Plus and assign",
+            name: "Menangani error",
             isCorrect: false,
         }
     }
@@ -62,7 +62,7 @@ export const quizSisdig: Soal[] = [
     {
         title: "Ubah biner menjadi decimal",
         opt1: {
-            name: "10",
+            name: "15",
             isCorrect: true,
         },
         opt2: {
@@ -75,22 +75,22 @@ export const quizSisdig: Soal[] = [
         },
     },
     {
-        title: "Ubah hexadecimal menjadi biner",
+        title: "Ubah oktal menjadi biner",
         opt1: {
-            name: "101001",
+            name: "100",
             isCorrect: false,
         },
         opt2: {
-            name: "10111",
+            name: "34",
             isCorrect: false,
         },
         opt3: {
-            name: "10000",
+            name: "16",
             isCorrect: true,
         },
     },
     {
-        title: "Pertambahan biner",
+        title: "Ubah heksadesimal ke biner",
         opt1: {
             name: "0011100",
             isCorrect: false,
@@ -100,11 +100,88 @@ export const quizSisdig: Soal[] = [
             isCorrect: false,
         },
         opt3: {
-            name: "10101",
+            name: "10001",
             isCorrect: true,
         },
     },
 ]
 
+export const quizPPL: Soal[] = [
+    {
+        title: "Apa kepanjangan SDLC?",
+        opt1: {
+            name: "Software Development Life Cycle",
+            isCorrect: true,
+        },
+        opt2: {
+            name: "Software Development Live Cycle",
+            isCorrect: false,
+        },
+        opt3: {
+            name: "Software Document Loan Case",
+            isCorrect: false,
+        },
+    },
+    {
+        title: "Gambar ini termasuk process flow apa?",
+        opt1: {
+            name: "Linier",
+            isCorrect: true,
+        },
+        opt2: {
+            name: "Iterative",
+            isCorrect: false,
+        },
+        opt3: {
+            name: "Parallel",
+            isCorrect: false,
+        },
+    },
+    {
+        title: "Beikut jenis process flow (kecuali)",
+        opt1: {
+            name: "Parallel",
+            isCorrect: false,
+        },
+        opt2: {
+            name: "Continuous",
+            isCorrect: true,
+        },
+        opt3: {
+            name: "Evolutionary",
+            isCorrect: false,
+        },
+    },
+    {
+        title: "Contoh process flow Linier",
+        opt1: {
+            name: "Prototyping",
+            isCorrect: false,
+        },
+        opt2: {
+            name: "Waterfall Model",
+            isCorrect: true,
+        },
+        opt3: {
+            name: "Spiral Model",
+            isCorrect: false,
+        },
+    },
+    {
+        title: "Definisi Iterative",
+        opt1: {
+            name: "Menjalankan aktivitas secara melingkar",
+            isCorrect: false,
+        },
+        opt2: {
+            name: "Mengulang kegiatan sebelum melanjutkan yang berikutnya",
+            isCorrect: true,
+        },
+        opt3: {
+            name: "Menjalankan satu atau lebih kegiatan secara paralel",
+            isCorrect: false,
+        },
+    },
+]
 
 

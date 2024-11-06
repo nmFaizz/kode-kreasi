@@ -2,10 +2,9 @@
 
 import { use, useState } from "react";
 import QuizPage from "@/app/components/Quiz";
-import { quizDasprog, quizSisdig, Soal } from "@/constant/quiz";
-import Result from "@/app/components/Result"; // Adjust path as necessary
-import { notFound } from "next/navigation"; // Import notFound for handling unknown quizzes
-
+import { quizDasprog, quizPPL, quizSisdig, Soal } from "@/constant/quiz";
+import Result from "@/app/components/Result"; 
+import { notFound } from "next/navigation"; 
 
 export default function SingleQuizPage({ params }: { params: { quiz: string } }) {
     const [index, setIndex] = useState(0);
@@ -16,12 +15,14 @@ export default function SingleQuizPage({ params }: { params: { quiz: string } })
 
     let lesson: Soal[] = [];
 
-    if (params.quiz === "Dasprog") {
+    if (params.quiz === "dasprog") {
         lesson = quizDasprog;
-    } else if (params.quiz === "Sisdig") {
+    } else if (params.quiz === "sisdig") {
         lesson = quizSisdig;
-    } else {
-        return notFound(); // Redirects to a 404 page if quiz is not found
+    } else if (params.quiz === "ppl"){
+        lesson = quizPPL;
+    }else {
+        return notFound(); 
     }
 
     const handleNext = () => {
@@ -38,7 +39,7 @@ export default function SingleQuizPage({ params }: { params: { quiz: string } })
     
     const handleBack = () => {
         setIndex((prevIndex) => prevIndex - 1);
-        setSelectedAnswer(null); // Clear the selection for the previous question
+        setSelectedAnswer(null); 
     };
 
     const handleFinish = () => {
@@ -52,21 +53,32 @@ export default function SingleQuizPage({ params }: { params: { quiz: string } })
         setShowResult(true);
     };
 
+
     const isLastQuestion = index === lesson.length - 1;
     const isFirstQuestion = index === 0;
 
-    if (index >= lesson.length) return null; // Avoid out-of-bounds rendering
+    if (index >= lesson.length) return null; 
 
-    // Set image path based on quiz type
-    const imagePath = params.quiz === "Dasprog" ? `/dasprogImg/${index + 1}.png` : `/sisdigImg/${index + 1}.png`;
+    let imagePath = (() => {
+        if (params.quiz === "dasprog") {
+            return `/dasprogImg/${index+1}.png`; 
+        } else if (params.quiz === "sisdig") {
+            return `/sisdigImg/${index+1}.png`; 
+        } else if (params.quiz === "ppl") {
+            return `/pplImg/${index+1}.png`; 
+        } else {
+            return ""; 
+        }
+    })();
 
     return (
         <div className="page-max-width">
             {showResult ? (
-                <Result number={answers.filter(Boolean).length * 33 + 1} />
+                <Result number={answers.filter(Boolean).length * (100/lesson.length)} />
             ) : (
                 <QuizPage
                         questionIdx={index}
+                        questionAll={lesson.length}
                         question={lesson[index]}
                         image={imagePath}
                         setSelectedAnswer={(isCorrect: boolean) => setSelectedAnswer(isCorrect)}
@@ -75,7 +87,7 @@ export default function SingleQuizPage({ params }: { params: { quiz: string } })
                         handleBack={handleBack}
                         handleFinish={handleFinish}
                         isLastQuestion={isLastQuestion}
-                        isFirstQuestion={isFirstQuestion} check={check}                />
+                        isFirstQuestion={isFirstQuestion} check={check}   />
             )}
         </div>
     );

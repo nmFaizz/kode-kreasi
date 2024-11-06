@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import AnimatedCounter from "@/app/components/AnimationCounter"; // Adjust path as necessary
 import { motion } from "framer-motion";
+import AnimatedModalDemo from "./AnimatedModal";
 
 interface ResultProps {
     number: number; // Expecting a number prop
@@ -16,7 +17,7 @@ export default function Result({ number }: ResultProps) {
     }, [number]);
 
     return (
-        <div className="flex items-center justify-center min-h-screen mx-auto text-8xl">
+        <div className="flex flex-col items-center justify-center min-h-screen  mx-auto text-8xl">
             <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -25,6 +26,9 @@ export default function Result({ number }: ResultProps) {
                 <AnimatedCounter from={0} to={targetNumber} />
                 <span className="font-mono">/100</span>
             </motion.div>
+            <div className="flex flex-row items-center">
+                <AnimatedModalDemo />
+            </div>
         </div>
     );
 }
