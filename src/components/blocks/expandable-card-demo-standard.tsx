@@ -83,8 +83,8 @@ export default function ExpandableCard({
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
                   priority
-                  width={200}
-                  height={200}
+                  width={700}
+                  height={700}
                   src={active.src}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
@@ -111,7 +111,6 @@ export default function ExpandableCard({
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
-                    target="_blank"
                     className="px-4 py-3 text-sm rounded-full font-bold bg-purple-soft hover:bg-purple-main text-white-soft font-utendo"
                   >
                     {active.ctaText}
@@ -137,7 +136,7 @@ export default function ExpandableCard({
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full gap-4">
         {filteredCourseList.map((card, index) => (
-        <Reveal width="100%" delay={0.40}>
+        <Reveal width="100%" delay={index * 0.35}>
           <motion.div
               layoutId={`card-${card.title}-${id}`}
               key={`card-${card.title}-${id}`}

@@ -9,7 +9,7 @@ const heksaExample = `A4_{16} = A \\cdot 16^1 + 4 \\cdot 16^0 = 10 \\cdot 16 + 4
 export default function SisdigPage() {
     return(
         <>
-        <div className="page-max-width">
+        <div className="px-4 mx-auto max-w-[748px]">
             <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengantar Sistem Digital</h1>
             <div className="font-utendo text-lg text-justify leading-loose">
                 <p className="mt-5">Sistem Digital adalah dasar dari teknologi modern yang kita gunakan

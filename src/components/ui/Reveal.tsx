@@ -22,10 +22,10 @@ export const Reveal = ({children, width = "fit-content", delay = 0.25}: Props) =
     }, [isInView])
 
     return(
-        <div ref={ref} style={{position: "relative", width, overflowY: "hidden", }}className="hide-scrollbar">
+        <div ref={ref} style={{position: "relative", width, }}className="hide-scrollbar">
             <motion.div 
                 variants={{
-                    hidden: {opacity: 0, y: 75},
+                    hidden: {opacity: 0, y: 20},
                     visible: {opacity: 1, y: 0},
                 }}
                 initial="hidden"

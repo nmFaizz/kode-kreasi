@@ -10,6 +10,9 @@ export default function Materi () {
     const categories = ["Programming", "Matematika", "Konsep RPL"];
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
+    const words = "\"Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.\" – Pelé";
+
+
     return(
         <>
         <div className="page-max-width pt-20">
@@ -19,7 +22,7 @@ export default function Materi () {
                 </Reveal>
             </div>
             <div className="flex mb-5 mt-5 md:justify-center overflow-x-scroll hide-scrollbar">
-                <Reveal delay={0.20}>
+                <Reveal delay={0.25}>
                     <CategorySelector 
                         categories={categories}
                         selectedCategories={selectedCategories}

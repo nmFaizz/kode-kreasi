@@ -30,7 +30,7 @@ const multiLineComment = ` /*
 export default function DasprogPage () {
     return (
         <>
-        <div className="page-max-width">
+        <div className="px-4 mx-auto max-w-[748px]">
             <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengenalan Dasar Pemrograman</h1>
             <div className="font-utendo text-lg text-justify leading-loose">
                 <p className="mt-5">Dasar Pemrograman adalah fondasi utama dalam dunia teknologi. Materi
