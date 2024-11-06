@@ -10,9 +10,6 @@ export default function Materi () {
     const categories = ["Programming", "Matematika", "Konsep RPL"];
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-    const words = "\"Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.\" – Pelé";
-
-
     return(
         <>
         <div className="page-max-width pt-20">
