@@ -59,7 +59,7 @@ export default function SingleQuizPage({ params }: { params: { quiz: string } })
 
     if (index >= lesson.length) return null; 
 
-    let imagePath = (() => {
+    const imagePath = (() => {
         if (params.quiz === "dasprog") {
             return `/dasprogImg/${index+1}.png`; 
         } else if (params.quiz === "sisdig") {

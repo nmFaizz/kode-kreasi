@@ -10,11 +10,14 @@ const helloWorld = `#include <stdio.h>
     printf("Hello, World!");
     return 0;
 }`;
+
 const printHelloWorld = ` Hello World`;
+
 const mainHelloWorld = `int main() {
     printf("Hello, World!");
     return 0;
 }`;
+
 const statementHelloWorld = ` printf("Hello, World!");
  return 0;`;
 
