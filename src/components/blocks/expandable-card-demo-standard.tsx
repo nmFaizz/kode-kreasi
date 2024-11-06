@@ -3,17 +3,23 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { Reveal } from "../ui/Reveal";
 
-export default function ExpandableCard({selectedCategories} : {selectedCategories: string[]}) {
+export default function ExpandableCard({
+  selectedCategories,
+}: {
+  selectedCategories: string[];
+}) {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
 
-  const filteredCourseList = selectedCategories.length > 0
-    ? cards.filter(card => selectedCategories.includes(card.category)) 
-    : cards;
+  const filteredCourseList =
+    selectedCategories.length > 0
+      ? cards.filter((card) => selectedCategories.includes(card.category))
+      : cards;
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -106,7 +112,7 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-purple-soft text-white-soft font-utendo"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-purple-soft hover:bg-purple-main text-white-soft font-utendo"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -126,49 +132,52 @@ export default function ExpandableCard({selectedCategories} : {selectedCategorie
                 </div>
               </div>
             </motion.div>
-          </div>
+            </div>
         ) : null}
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full gap-4">
         {filteredCourseList.map((card, index) => (
+        <Reveal width="100%" delay={0.40}>
           <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={`card-${card.title}-${id}`}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer bg-white-dark"
+              layoutId={`card-${card.title}-${id}`}
+              key={`card-${card.title}-${id}`}
+              onClick={() => setActive(card)}
+              className="p-4 flex flex-row justify-between items-center hover:bg-white-dark dark:hover:bg-neutral-800 rounded-xl cursor-pointer  mb-3"
           >
-            <div className="flex gap-4 flex-col md:flex-row ">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
-                />
-              </motion.div>
-              <div className="">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium font-utendo text-neutral-800 dark:text-neutral-200 text-center md:text-left"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 font-utendo dark:text-neutral-400 text-center md:text-left"
-                >
-                  {card.description}
-                </motion.p>
+              <div className="flex gap-4 flex-row ">
+                <motion.div layoutId={`image-${card.title}-${id}`}>
+                  <Image
+                    width={100}
+                    height={100}
+                    src={card.src}
+                    alt={card.title}
+                    className=" h-14 w-14 md:h-14 md:w-14 md:block rounded-xl object-cover object-top "
+                  />
+                </motion.div>
+                <div className="flex-1">
+                  <motion.h3
+                    layoutId={`title-${card.title}-${id}`}
+                    className="font-medium font-utendo text-neutral-800 dark:text-neutral-200 text-left text-sm md:text-lg"
+                  >
+                    {card.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`description-${card.description}-${id}`}
+                    className="text-neutral-600 font-utendo dark:text-neutral-400 text-left text-sm md:text-lg"
+                  >
+                    {card.description}
+                  </motion.p>
+                </div>
               </div>
-            </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold font-utendo bg-gray-100 hover:bg-purple-soft hover:text-white-soft text-black mt-4 md:mt-0"
-            >
-              {card.ctaText}
-            </motion.button>
-          </motion.div>
+              <motion.button
+                layoutId={`button-${card.title}-${id}`}
+                className="px-4 py-2 text-sm rounded-full font-bold font-utendo bg-purple-soft hover:bg-purple-main text-white-soft hover:text-white-soft mt-4 md:mt-0"
+              >
+                {card.ctaText}
+              </motion.button>
+            </motion.div>
+          </Reveal>
+          
         ))}
       </ul>
     </>
@@ -215,113 +224,65 @@ const cards = [
     src: "/dasprog.jpeg",
     ctaText: "Detail",
     category: "Programming",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/materi/dasprog",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+          Dasar Pemrograman adalah fondasi utama dalam dunia teknologi. Materi
+          ini membahas konsep-konsep penting seperti algoritma dasar, struktur
+          data, dan logika pemrograman yang diperlukan untuk mengembangkan
+          keterampilan coding. Dengan memahami dasar pemrograman, Anda akan
+          mampu menyelesaikan masalah dengan lebih terstruktur, membangun
+          aplikasi sederhana, dan menyiapkan diri untuk belajar bahasa
+          pemrograman yang lebih lanjut. Materi ini dirancang untuk pemula yang
+          ingin memahami dasar-dasar logika dan pemikiran komputasional yang
+          efisien.
         </p>
       );
     },
   },
-  {
-    description:
-      "Konsep dasar mencakup vektor, matriks, dan sistem persamaan linear",
-    title: "Aljabar Linier",
-    src: "/alin.jpg",
-    ctaText: "Detail",
-    category: "Matematika",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
-      );
-    },
-  },
-
   {
     description: "Logika digital, dan rangkaian kombinasi serta sekuensial.",
     title: "Sistem Digital",
     src: "/sisdig.jpg",
     ctaText: "Detail",
     category: "Matematika",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "/materi/sisdig",
     content: () => {
       return (
         <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
+          Sistem Digital adalah dasar dari teknologi modern yang kita gunakan
+          sehari-hari. Materi ini mencakup konsep logika digital serta desain
+          rangkaian kombinasi dan sekuensial yang membentuk sistem komputer dan
+          perangkat elektronik lainnya. Dalam materi ini, Anda akan mempelajari cara
+          kerja gerbang logika, tabel kebenaran, serta bagaimana rangkaian digital
+          dikembangkan untuk memproses informasi secara efisien. Pemahaman ini
+          penting bagi siapa saja yang ingin mendalami bidang elektronika atau ilmu
+          komputer.
         </p>
       );
-    },
-  },
-  {
-    description: "Model data, normalisasi, dan manipulasi data dengan query",
-    title: "Basis Data",
-    src: "/basisdata.jpg",
-    ctaText: "Detail",
-    category: "Data",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br /> Their songs often reflect a blend of blues, hard
-          rock, and folk music, capturing the essence of the 1970s rock era.
-          With a career spanning over a decade, Led Zeppelin has released
-          numerous hit albums and singles that have garnered them a massive fan
-          following both in the United Kingdom and abroad.
-        </p>
-      );
-    },
+},
+
   },
   {
     description: "Analisis kebutuhan, desain, dan teori SDLC",
     title: "Pengembangan Perangkat Lunak",
     src: "/ppl.jpg",
     ctaText: "Detail",
-    category: "Programming",
-    ctaLink: "https://ui.aceternity.com/templates",
+    category: "Konsep RPL",
+    ctaLink: "/materi/ppl",
     content: () => {
       return (
         <p>
-          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-          renowned for its intense storyline and powerful performances. Directed
-          by Mohit Suri, the film has become a significant work in the Indian
-          film industry. <br /> <br /> The movie explores themes of love,
-          redemption, and sacrifice, capturing the essence of human emotions and
-          relationships. With a gripping narrative and memorable music,
-          &quot;Aawarapan&quot; has garnered a massive fan following both in
-          India and abroad, solidifying Emraan Hashmi&apos;s status as a
-          versatile actor.
+          Pengembangan Perangkat Lunak adalah proses penting dalam pembuatan
+          aplikasi dan sistem. Materi ini mencakup analisis kebutuhan, desain
+          perangkat lunak, serta teori SDLC (Software Development Life Cycle),
+          yang membantu merancang perangkat lunak yang efektif dan sesuai dengan
+          kebutuhan pengguna. Anda akan mempelajari cara menentukan kebutuhan
+          pengguna, mendesain solusi, dan memahami berbagai tahap dalam SDLC,
+          termasuk perencanaan, pengujian, dan pemeliharaan perangkat lunak.
+          Pengetahuan ini sangat berguna bagi siapa saja yang tertarik dengan
+          dunia rekayasa perangkat lunak.
         </p>
       );
     },

@@ -41,12 +41,12 @@ const CategorySelector = ({
                                     addCategory(category);
                                 }
                             }}
-                            className={`w-fit min-w-fit h-8 mx-2 px-5 py-2 flex flex-row justify-center items-center font-utendo text-md border border-gray-500 bg-white text-gray-900 break-keep rounded-3xl cursor-pointer 
-                                        ${selectedCategories.includes(category) ? 'bg-purple-dark text-white-soft' : 'bg-white-soft text-gray-900'}`}>
+                            className={`w-fit min-w-fit h-8 mx-2 px-5 py-2 flex flex-row justify-center items-center font-utendo text-md border border-white-dark bg-white text-gray-900 break-keep rounded-3xl cursor-pointer 
+                                        ${selectedCategories.includes(category) ? 'bg-purple-dark text-white-soft' : 'bg-purple-soft text-white-soft'}`}>
                             {category}
                         </div>
                     ))}
-                    <h1 className="cursor-pointer text-blue-500" onClick={() => resetCategory()}>Clear</h1>
+                    <h1 className="cursor-pointer text-purple-dark underline underline-offset-1 ml-5 hidden md:block" onClick={() => resetCategory()}>Clear</h1>
                 </div>
             </div>
         )
