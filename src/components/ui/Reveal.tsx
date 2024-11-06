@@ -52,10 +52,10 @@ export const Reveal = ({children, width = "fit-content", delay = 0.25}: Props) =
                     bottom: 4,
                     left: 0,
                     right: 0,
-                    background: "#F7ECE1",
                     zIndex: 20,
                     borderRadius: "10px",
                 }}
+                className="bg-purple-soft"
             />
         </div>
     )

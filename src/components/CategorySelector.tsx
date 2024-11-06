@@ -44,7 +44,7 @@ const CategorySelector = ({
                                         ${
                                           selectedCategories.includes(category)
                                             ? "bg-purple-main text-white-soft"
-                                            : "text-white-soft text-purple-main "
+                                            : "text-purple-main  "
                                         }`}
           >
             {category}

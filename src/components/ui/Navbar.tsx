@@ -60,7 +60,7 @@ export default function Navbar() {
                         <Link href="/materi">
                             Materi
                         </Link>
-                        <Link href="/exercises">
+                        <Link href="/exercise">
                             Exercises
                         </Link>
                     </nav>

@@ -40,7 +40,7 @@ export default function ExerciseList() {
                   Latihan ini menguji pemahaman dasar pemrograman, termasuk variabel, struktur kontrol, dan konsep penting lainnya.
                 </p>
               </div>
-              <Link href="/exercises/dasprog" className="w-max px-4 py-0.5 bg-purple-soft text-white-soft rounded-[6px]">
+              <Link href="/exercise/dasprog" className="w-max px-4 py-0.5 bg-purple-soft text-white-soft rounded-[6px]">
                 Mulai Belajar
               </Link>
             </motion.div>
@@ -57,7 +57,7 @@ export default function ExerciseList() {
                   Pelajari dasar sistem digital, termasuk gerbang logika dan rangkaian digital.
                 </p>
               </div>
-              <Link href="/exercises/sisdig" className="w-max px-4 py-0.5 bg-purple-soft text-white-soft rounded-[6px]">
+              <Link href="/exercise/sisdig" className="w-max px-4 py-0.5 bg-purple-soft text-white-soft rounded-[6px]">
                 Mulai Belajar
               </Link>
             </motion.div>
@@ -72,7 +72,7 @@ export default function ExerciseList() {
                   Pelajari siklus hidup pengembangan perangkat lunak dan metodologi pengembangan.
                 </p>
               </div>
-              <Link href="/exercises/ppl" className="w-max px-4 py-0.5 bg-purple-soft text-white-soft rounded-[6px]">
+              <Link href="/exercise/ppl" className="w-max px-4 py-0.5 bg-purple-soft text-white-soft rounded-[6px]">
                 Mulai Belajar
               </Link>
             </motion.div>

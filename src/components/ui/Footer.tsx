@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function Footer() {
     return (
         <footer className=" mt-12">
-            <div className="page-max-width px-4 flex flex-col md:flex-row gap-5 md:justify-between md:items-center border-b border-black py-12">
+            <div className="page-max-width flex flex-col md:flex-row gap-5 md:justify-between md:items-center border-b border-black py-12">
                 <figure className="w-[120px]">
                     <Image 
                         src="/logo.png"
