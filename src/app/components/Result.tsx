@@ -16,14 +16,14 @@ export default function Result({ number }: ResultProps) {
     }, [number]);
 
     return (
-        <div className="flex items-center justify-center min-h-screen mx-auto">
+        <div className="flex items-center justify-center min-h-screen mx-auto text-8xl">
             <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <AnimatedCounter from={0} to={targetNumber} />
-                <span className="font-mono text-[48px]">/100</span>
+                <span className="font-mono">/100</span>
             </motion.div>
         </div>
     );

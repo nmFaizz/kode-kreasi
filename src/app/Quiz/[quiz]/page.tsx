@@ -1,16 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import QuizPage from "@/app/components/Quiz";
-import { quizDasprog, Soal } from "@/constant/quiz";
+import { quizDasprog, quizSisdig, Soal } from "@/constant/quiz";
 import Result from "@/app/components/Result"; // Adjust path as necessary
+import { notFound } from "next/navigation"; // Import notFound for handling unknown quizzes
+
 
 export default function SingleQuizPage({ params }: { params: { quiz: string } }) {
     const [index, setIndex] = useState(0);
+    const [check, setCheck] = useState<string | null>(null);
     const [selectedAnswer, setSelectedAnswer] = useState<boolean | null>(null);
     const [answers, setAnswers] = useState<boolean[]>([]);
-    const [showResult, setShowResult] = useState(false); // New state for showing result
-    let lesson: Soal[] = params.quiz === "Dasprog" ? quizDasprog : [];
+    const [showResult, setShowResult] = useState(false);
+
+    let lesson: Soal[] = [];
+
+    if (params.quiz === "Dasprog") {
+        lesson = quizDasprog;
+    } else if (params.quiz === "Sisdig") {
+        lesson = quizSisdig;
+    } else {
+        return notFound(); // Redirects to a 404 page if quiz is not found
+    }
 
     const handleNext = () => {
         if (selectedAnswer !== null) {
@@ -20,13 +32,13 @@ export default function SingleQuizPage({ params }: { params: { quiz: string } })
                 return updatedAnswers;
             });
         }
-
         setSelectedAnswer(null);
         setIndex((prevIndex) => prevIndex + 1);
     };
-
+    
     const handleBack = () => {
         setIndex((prevIndex) => prevIndex - 1);
+        setSelectedAnswer(null); // Clear the selection for the previous question
     };
 
     const handleFinish = () => {
@@ -37,34 +49,33 @@ export default function SingleQuizPage({ params }: { params: { quiz: string } })
                 return updatedAnswers;
             });
         }
-
-        // Calculate the number of correct answers
-        const correctAnswersCount = answers.filter(Boolean).length; // Counts the true values
-        setShowResult(true); // Show the result instead of the quiz
+        setShowResult(true);
     };
 
     const isLastQuestion = index === lesson.length - 1;
     const isFirstQuestion = index === 0;
 
-    if (index >= lesson.length) return null; // Do not render anything if out of bounds.
+    if (index >= lesson.length) return null; // Avoid out-of-bounds rendering
 
-    const imagePath = `/dasprogImg/${index + 1}.png`;
+    // Set image path based on quiz type
+    const imagePath = params.quiz === "Dasprog" ? `/dasprogImg/${index + 1}.png` : `/sisdigImg/${index + 1}.png`;
 
     return (
         <div className="page-max-width">
             {showResult ? (
-                <Result number={answers.filter(Boolean).length * 33 + 1} /> // Pass calculated score to Result
+                <Result number={answers.filter(Boolean).length * 33 + 1} />
             ) : (
                 <QuizPage
-                    question={lesson[index]}
-                    image={imagePath}
-                    setSelectedAnswer={(isCorrect: boolean) => setSelectedAnswer(isCorrect)}
-                    handleNext={handleNext}
-                    handleBack={handleBack}
-                    handleFinish={handleFinish}
-                    isLastQuestion={isLastQuestion}
-                    isFirstQuestion={isFirstQuestion}
-                />
+                        questionIdx={index}
+                        question={lesson[index]}
+                        image={imagePath}
+                        setSelectedAnswer={(isCorrect: boolean) => setSelectedAnswer(isCorrect)}
+                        setCheck={setCheck}
+                        handleNext={handleNext}
+                        handleBack={handleBack}
+                        handleFinish={handleFinish}
+                        isLastQuestion={isLastQuestion}
+                        isFirstQuestion={isFirstQuestion} check={check}                />
             )}
         </div>
     );

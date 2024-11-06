@@ -18,7 +18,7 @@ export const quizDasprog: Soal[] = [
             isCorrect: false,
         },
         opt2: {
-            name: "printf(`Hello world`)",
+            name: `printf("Hello world")`,
             isCorrect: true,
         },
         opt3: {
@@ -27,7 +27,7 @@ export const quizDasprog: Soal[] = [
         }
     },
     {
-        title: "Apa hasil output diatas?",
+        title: "Apa hasil outputnya?",
         opt1: {
             name: "Bukan Angka ",
             isCorrect: false,
@@ -58,23 +58,53 @@ export const quizDasprog: Soal[] = [
     }
 ];
 
-// export const quizSisdig: Soal[] = [
-//     {
-//         title: "Ubah dari biner menjadi decimal",
-//         opt1: {
-//             answer: "",
-//             isCorrect: false,
-//         },
-//         opt2: "101",
-//         opt3: "10",
-//     },
-//     {
-//         title: "Ubah hexadecimal menjadi decimal",
-//         opt1: "22",
-//         opt2: "112",
-//         opt3: "44",
-//     },
-// ]
+export const quizSisdig: Soal[] = [
+    {
+        title: "Ubah biner menjadi decimal",
+        opt1: {
+            name: "10",
+            isCorrect: true,
+        },
+        opt2: {
+            name: "12",
+            isCorrect: false,
+        },
+        opt3: {
+            name: "30",
+            isCorrect: false,
+        },
+    },
+    {
+        title: "Ubah hexadecimal menjadi biner",
+        opt1: {
+            name: "101001",
+            isCorrect: false,
+        },
+        opt2: {
+            name: "10111",
+            isCorrect: false,
+        },
+        opt3: {
+            name: "10000",
+            isCorrect: true,
+        },
+    },
+    {
+        title: "Pertambahan biner",
+        opt1: {
+            name: "0011100",
+            isCorrect: false,
+        },
+        opt2: {
+            name: "100011",
+            isCorrect: false,
+        },
+        opt3: {
+            name: "10101",
+            isCorrect: true,
+        },
+    },
+]
 
 
 

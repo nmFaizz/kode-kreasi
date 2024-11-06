@@ -20,7 +20,7 @@ export default function AnimatedCounter({ from, to, animationOptions }: Animated
         if (!inView) return;
 
         const controls = animate(from, to, {
-            duration: 2.0,
+            duration: 0.5,
             ease: "easeOut",
             ...animationOptions,
             onUpdate(value) {
@@ -31,7 +31,7 @@ export default function AnimatedCounter({ from, to, animationOptions }: Animated
         return () => {
             controls.stop();
         };
-    }, [ref, from, to, inView]); // Make sure `to` is included
+    }, [ref, from, to, inView]); 
 
-    return <span className="font-mono text-[48px]" ref={ref} />;
+    return <span className="font-mono" ref={ref} />;
 }
