@@ -10,4 +10,11 @@
   .light-border {
     @apply border-[1px] border-slate-200;
   }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
