@@ -1,9 +1,11 @@
 import Image from 'next/image';
+import Back from '@/components/ui/buttons/Back';
 
 export default function PplPage() {
     return(
         <>
         <div className="px-4 mx-auto max-w-[748px]">
+        <Back href="/materi"/>
             <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengenalan Pengembangan Perangkat Lunak</h1>
             <div className="font-utendo text-lg text-justify leading-loose">
                 <p className="mt-5">

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import AnimatedCounter from "@/app/components/AnimationCounter"; // Adjust path as necessary
 import { motion } from "framer-motion";
-import AnimatedModalDemo from "./AnimatedModal";
+import Back from "@/components/ui/buttons/Back";
 
 interface ResultProps {
     number: number; // Expecting a number prop
@@ -27,7 +27,7 @@ export default function Result({ number }: ResultProps) {
                 <span className="font-mono">/100</span>
             </motion.div>
             <div className="flex flex-row items-center">
-                <AnimatedModalDemo />
+                <Back href="/exercise"/>
             </div>
         </div>
     );
