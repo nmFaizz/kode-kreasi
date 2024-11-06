@@ -19,7 +19,7 @@ export default function Materi () {
                 </Reveal>
             </div>
             <div className="flex mb-5 mt-5 md:justify-center overflow-x-scroll hide-scrollbar">
-                <Reveal delay={0.20}>
+                <Reveal delay={0.25}>
                     <CategorySelector 
                         categories={categories}
                         selectedCategories={selectedCategories}

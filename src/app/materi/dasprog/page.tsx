@@ -1,6 +1,7 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import c from 'react-syntax-highlighter/dist/esm/languages/hljs/c';
 import docco from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
+import Back from '@/components/ui/buttons/Back';
 
 SyntaxHighlighter.registerLanguage('c', c);
 
@@ -30,8 +31,9 @@ const multiLineComment = ` /*
 export default function DasprogPage () {
     return (
         <>
-        <div className="page-max-width">
-            <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengenalan Dasar Pemrograman</h1>
+        <div className="px-4 mx-auto max-w-[748px]">
+        <Back href="/materi"/>
+            <h1 className="font-bold font-tango text-center text-4xl">Pengenalan Dasar Pemrograman</h1>
             <div className="font-utendo text-lg text-justify leading-loose">
                 <p className="mt-5">Dasar Pemrograman adalah fondasi utama dalam dunia teknologi. Materi
                     ini membahas konsep-konsep penting seperti algoritma dasar, struktur

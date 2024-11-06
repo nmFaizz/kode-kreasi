@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css'; 
+import Back from '@/components/ui/buttons/Back';
 
 const binaryExample = `1010 = 1 \\cdot 2^3 + 0 \\cdot 2^2 + 1 \\cdot 2^1 + 0 \\cdot 2^0 = 8 + 0 + 2 + 0 = 10`;
 const oktalExample = `12_8 = 1 \\cdot 8^1 + 2 \\cdot 8^0 = 8 + 2 = 10_{10}`;
@@ -9,7 +10,8 @@ const heksaExample = `A4_{16} = A \\cdot 16^1 + 4 \\cdot 16^0 = 10 \\cdot 16 + 4
 export default function SisdigPage() {
     return(
         <>
-        <div className="page-max-width">
+        <div className="px-4 mx-auto max-w-[748px]">
+        <Back href="/materi"/>
             <h1 className="font-bold font-tango text-center text-4xl mt-7">Pengantar Sistem Digital</h1>
             <div className="font-utendo text-lg text-justify leading-loose">
                 <p className="mt-5">Sistem Digital adalah dasar dari teknologi modern yang kita gunakan
