@@ -15,7 +15,7 @@ export default function Footer() {
                 </figure>
 
                 <div className="text-xl flex gap-12">
-                    <Link href="/home" className="hover:text-purple-dark">Home</Link>
+                    <Link href="/" className="hover:text-purple-dark">Home</Link>
                     <Link href="/materi" className="hover:text-purple-dark">Materi</Link>
                     <Link href="/exercise" className="hover:text-purple-dark">Exercise</Link>
                 </div>
